@@ -13,7 +13,7 @@ func main() {
 		log.Fatalf("No filename specified")
 	}
 	filename := flag.Arg(0)
-	if err := editor.Run(filename); err != nil {
+	if err := editor.Open(filename); err != nil {
 		log.Fatalf("Editor failed: %v", err)
 	}
 }
