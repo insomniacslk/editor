@@ -1,7 +1,6 @@
 package editor
 
 import (
-	"fmt"
 	"os"
 	"os/exec"
 )
@@ -53,6 +52,5 @@ func (e *Editor) Get() (string, []string) {
 func (e *Editor) Open(filename string) error {
 	cmd := exec.Command(e.path, append(e.args, filename)...)
 	cmd.Stdout, cmd.Stderr = os.Stdout, os.Stderr
-	fmt.Printf("Running %d %s %v\n", len(cmd.Args), cmd.Path, cmd.Args)
 	return cmd.Run()
 }
